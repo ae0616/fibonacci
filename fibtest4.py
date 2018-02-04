@@ -1,14 +1,14 @@
 a, b = 0, 1
 
 
-def fibI():
+def fib_iter():
     global a, b
     while True:
-        a, b = b, a + b
         yield a
+        a, b = b, a + b
 
 
 if __name__ == '__main__':
-    f = fibI()
-    for i in range(1, 20):
+    f = fib_iter()
+    for i in range(0, 20):
         print(f'fib({i:2}) ==> {next(f):4}')
